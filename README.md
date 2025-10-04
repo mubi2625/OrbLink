@@ -1,17 +1,10 @@
-# 🛰️ OrbLink Simulator
+# 🛰️ LEO Link Simulator
 
-A Python based **LEO satellite constellation link feasibility simulator** that compares two architecture strategies:
+A Python-based **LEO satellite constellation link feasibility simulator** that compares two architecture strategies:
 1. **Ground-Station-Only** (satellites communicate only via ground stations)
 2. **Crosslinked** (satellites communicate with each other + minimal ground stations)
 
 Built for hackathon demonstrations and feasibility studies.
-
-## Team Members
-- Mubasshirah Khan
-- Gaurav Mishra
-- Syun M. Dixit
-- Surith Hariharan Thogulava
-- Sofia Adelentado Lopez
 
 ---
 
@@ -39,16 +32,22 @@ The app will open in your browser at `http://localhost:8501`
 ```
 LEO_Link_Simulator/
 │
-├── main.py                  # Streamlit web interface
-├── constellations.py        # Satellite & GroundStation classes
-├── link_budget.py           # Friis equation, SNR, latency calculations
-├── simulation.py            # Orbit propagation & simulation engine
-├── cost_model.py            # Cost analysis & CapEx calculations
-├── plots.py                 # Interactive visualization functions
-├── requirements.txt         # Python dependencies
-├── README.md               # This file
+├── main.py                         # Streamlit web interface
+├── constellations.py               # Satellite & GroundStation classes
+├── link_budget.py                  # Friis equation, SNR, latency calculations
+├── simulation.py                   # Orbit propagation & simulation engine
+├── cost_model.py                   # Cost analysis & CapEx calculations
+├── plots.py                        # Interactive visualization functions
+├── debris_analysis.py              # Space debris risk & sustainability scoring
+├── regulatory_compliance.py        # FCC, ITU, and international requirements
+├── business_model.py               # Revenue model and market analysis
+├── nasa_data_integration.py        # NASA TLE data loader
+├── requirements.txt                # Python dependencies
+├── README.md                       # This file
+├── COMPREHENSIVE_FEATURES_GUIDE.md # Full feature documentation
+├── QUICK_REFERENCE_CARD.md         # Quick reference guide
 └── data/
-    └── tle/                # (Optional) NASA TLE data files
+    └── tle/                        # NASA TLE data files
 ```
 
 ---
@@ -66,24 +65,60 @@ LEO_Link_Simulator/
 ### Orbital Simulation
 - Circular orbit propagation for LEO satellites (400-800 km altitude)
 - Line-of-sight visibility calculations
-- Multi-satellite constellation support (4-12 satellites)
+- Multi-satellite constellation support (4-100+ satellites)
 - Global ground station distribution
+- NASA TLE data integration for real constellation analysis
 
 ### Cost Analysis
 - **CapEx Breakdown**:
-  - Ground station costs: $5M per station
-  - Satellite base cost: $2M per satellite
+  - Ground station costs: $10M per station
   - ISL hardware: $500K per satellite
+  - Deorbit propulsion: $100K per satellite (if needed)
+- **OpEx Modeling**: Ground station operations ($500K per year)
+- **Tipping Point Analysis**: Find satellite count where crosslinks become cost-effective
+- **Payback Period**: Time to recover crosslink investment
 - **ROI Metrics**: Calculate return on investment with performance improvements
-- **Savings Analysis**: Compare architectures and identify optimal strategy
+
+### Sustainability and Debris Analysis (NASA ODPO Integration)
+- **Collision Risk Assessment**: Calculate probability based on altitude and constellation size
+- **Deorbit Requirements**: FCC 25-year rule compliance checking
+- **Natural Decay Modeling**: Altitude-dependent decay times
+- **Propellant Calculations**: Delta-v and mass requirements for active deorbit
+- **Mitigation Costs**: Insurance, tracking, collision avoidance, and hardware
+- **Sustainability Scoring**: 0-100 score based on debris risk, compliance, and altitude
+- **NASA Recommendations**: ODPO best practices for your constellation
+
+### Regulatory Compliance
+- **Licensing Requirements**: FCC, ITU, and national space agency requirements
+- **Cost Estimation**: Upfront and annual regulatory compliance costs
+- **Timeline Projections**: Approval timelines by jurisdiction (12-18 months typical)
+- **Frequency Coordination**: Band-specific coordination requirements and difficulty
+- **Risk Assessment**: Regulatory approval risks based on constellation parameters
+- **International Cooperation**: Data sharing, ground infrastructure, and research opportunities
+
+### Business Model Analysis
+- **Service Tiers**: Basic, Professional, and Enterprise pricing models
+- **Revenue Projections**: 5-year conservative revenue forecasts
+- **Profitability Analysis**: Break-even calculations and margin projections
+- **Market Opportunity**: TAM/SAM/SOM analysis for constellation optimization services
+- **Competitive Landscape**: Comparison with industry tools (AGI STK, Ansys Space)
+- **Go-to-Market Strategy**: Customer acquisition and retention plans
 
 ### Interactive Visualizations
 - SNR over time comparison
 - Latency trends
 - Coverage and availability metrics
-- Cost breakdown charts
+- Cost breakdown charts with tipping point analysis
 - Link distance distributions
 - Satellite coverage heatmaps
+- Link type distribution (ground vs crosslink)
+
+### Executive Reporting
+- **Nuanced Recommendations**: Multi-factor scoring considers cost, latency, coverage, and complexity
+- **Key Findings**: Automated insights and decision factors
+- **Technical Verification**: Detailed model explanations and sources
+- **Use Case Guidance**: When each architecture makes sense
+- **Exportable Reports**: Download as TXT and CSV
 
 ---
 
@@ -137,10 +172,10 @@ Threshold: SNR > 10 dB = feasible link
 
 ### Output Tabs
 
-1. **Simulation Results**: SNR, latency, coverage plots and metrics
-2. **Cost Analysis**: CapEx comparison and breakdown
-3. **Value Dashboard**: KPIs, ROI, and business impact summary
-4. **Data Tables**: Raw data export and detailed metrics
+1. **📊 Simulation Results**: SNR, latency, coverage plots and metrics
+2. **💰 Cost Analysis**: CapEx comparison and breakdown
+3. **📈 Value Dashboard**: KPIs, ROI, and business impact summary
+4. **📋 Data Tables**: Raw data export and detailed metrics
 
 ---
 
@@ -274,7 +309,4 @@ Built as a hackathon prototype for LEO satellite constellation analysis.
 ---
 
 *Last Updated: October 2025*
-
-
-
 

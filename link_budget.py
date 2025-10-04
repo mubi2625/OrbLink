@@ -13,7 +13,13 @@ def friis_received_power(transmit_power_dBW: float,
                         frequency_Hz: float,
                         atmospheric_loss_dB: float = 2.0,
                         system_loss_dB: float = 3.0) -> float:
-    """Calculate received power using the Friis transmission equation."""
+    """
+    Calculate received power using the Friis transmission equation.
+    
+    Note: Atmospheric loss default (2.0 dB) assumes clear sky conditions at Ku-band.
+    Does NOT model rain fade, which can add 5-20 dB additional loss.
+    System loss (3.0 dB) includes pointing, polarization, and implementation margins.
+    """
     # Convert dBW to linear
     Pt_linear = 10**(transmit_power_dBW / 10)
     

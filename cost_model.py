@@ -3,9 +3,17 @@ import pandas as pd
 from typing import Dict, Tuple
 
 # Cost assumptions (in USD)
-COST_PER_GROUND_STATION = 5_000_000  # $5M per ground station (construction, equipment, operations)
-COST_PER_ISL_HARDWARE = 500_000      # $500K per satellite for ISL hardware
-COST_PER_SATELLITE_BASE = 2_000_000  # $2M base cost per satellite
+# These are industry averages for commercial LEO operations
+# Actual costs vary significantly by vendor, capability level, and production quantity
+COST_PER_GROUND_STATION = 5_000_000  # $5M per medium-capability commercial ground station
+                                      # Includes construction, antenna, RF equipment, integration
+                                      # Range: $1-3M (basic) to $10-20M (high-capability)
+                                      # NASA DSN stations cost $50-100M+ (not comparable)
+COST_PER_ISL_HARDWARE = 500_000      # $500K per satellite for ISL hardware (laser terminals)
+                                      # Range: $300-500K for laser, $100-300K for RF crosslinks
+COST_PER_SATELLITE_BASE = 2_000_000  # $2M base cost per satellite (medium-size LEO, 50-200kg)
+                                      # Mass production (100+ units) can reduce to $500K-1M
+                                      # Large satellites (>500kg) can cost $10-50M+
 
 def calculate_ground_station_only_cost(num_ground_stations: int, 
                                       num_satellites: int) -> Dict[str, float]:
@@ -179,5 +187,74 @@ def calculate_roi_metrics(cost_comparison: Dict[str, any],
         'coverage_improvement_value': coverage_value,
         'total_value': total_value,
         'roi_percentage': roi_percentage
+    }
+
+def calculate_tipping_point(num_gs_ground_only: int = 5,
+                           num_gs_crosslinked: int = 2) -> int:
+    """
+    Calculate the satellite count where crosslinks become cost-effective.
+    
+    Tipping point is when:
+    (N_sats * ISL_cost) < (Saved_GS * GS_cost)
+    
+    Args:
+        num_gs_ground_only: Ground stations for ground-only architecture
+        num_gs_crosslinked: Ground stations for crosslinked architecture
+        
+    Returns:
+        Minimum number of satellites where crosslinks save money
+    """
+    gs_saved = num_gs_ground_only - num_gs_crosslinked
+    gs_savings = gs_saved * COST_PER_GROUND_STATION
+    
+    # At tipping point: N * ISL_cost = GS_savings
+    tipping_point_sats = int(np.ceil(gs_savings / COST_PER_ISL_HARDWARE))
+    
+    return max(tipping_point_sats, 1)
+
+def calculate_payback_period(cost_comparison: Dict[str, any],
+                            annual_revenue_per_sat: float = 200_000,
+                            years: int = 10) -> Dict[str, float]:
+    """
+    Calculate payback period considering OpEx over time.
+    
+    Args:
+        cost_comparison: Output from calculate_cost_comparison
+        annual_revenue_per_sat: Expected annual revenue per satellite
+        years: Mission lifetime in years
+        
+    Returns:
+        Payback analysis
+    """
+    # CapEx difference
+    capex_diff = cost_comparison['cost_savings_usd']
+    
+    # OpEx (ground station operations)
+    gs_only_opex_annual = cost_comparison['ground_station_only']['num_ground_stations'] * 500_000
+    crosslink_opex_annual = cost_comparison['crosslinked']['num_ground_stations'] * 500_000
+    opex_savings_annual = gs_only_opex_annual - crosslink_opex_annual
+    
+    # Total savings over mission life
+    total_capex_savings = capex_diff
+    total_opex_savings = opex_savings_annual * years
+    total_savings = total_capex_savings + total_opex_savings
+    
+    # Payback period (if crosslink costs MORE upfront)
+    if capex_diff < 0:  # Crosslink costs more
+        extra_investment = abs(capex_diff)
+        if opex_savings_annual > 0:
+            payback_years = extra_investment / opex_savings_annual
+        else:
+            payback_years = float('inf')
+    else:
+        payback_years = 0  # Immediate savings
+    
+    return {
+        'capex_savings': capex_diff,
+        'annual_opex_savings': opex_savings_annual,
+        'total_opex_savings': total_opex_savings,
+        'total_savings': total_savings,
+        'payback_years': payback_years,
+        'mission_years': years
     }
 
