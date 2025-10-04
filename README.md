@@ -1,4 +1,4 @@
-# 🛰️ LEO Link Simulator
+# 🛰️ OrbLink Simulator
 
 A Python based **LEO satellite constellation link feasibility simulator** that compares two architecture strategies:
 1. **Ground-Station-Only** (satellites communicate only via ground stations)
@@ -137,10 +137,10 @@ Threshold: SNR > 10 dB = feasible link
 
 ### Output Tabs
 
-1. **📊 Simulation Results**: SNR, latency, coverage plots and metrics
-2. **💰 Cost Analysis**: CapEx comparison and breakdown
-3. **📈 Value Dashboard**: KPIs, ROI, and business impact summary
-4. **📋 Data Tables**: Raw data export and detailed metrics
+1. **Simulation Results**: SNR, latency, coverage plots and metrics
+2. **Cost Analysis**: CapEx comparison and breakdown
+3. **Value Dashboard**: KPIs, ROI, and business impact summary
+4. **Data Tables**: Raw data export and detailed metrics
 
 ---
 
@@ -274,5 +274,6 @@ Built as a hackathon prototype for LEO satellite constellation analysis.
 ---
 
 *Last Updated: October 2025*
+
 
 
