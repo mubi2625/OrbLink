@@ -10,7 +10,7 @@ Built for hackathon demonstrations and feasibility studies.
 - Mubasshirah Khan
 - Gaurav Mishra
 - Syun M. Dixit
-- Surith Thogulava
+- Surith Hariharan Thogulava
 - Sofia Adelentado Lopez
 
 ---
@@ -274,6 +274,7 @@ Built as a hackathon prototype for LEO satellite constellation analysis.
 ---
 
 *Last Updated: October 2025*
+
 
 
 
