@@ -8,7 +8,7 @@ Built for hackathon demonstrations and feasibility studies.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -27,7 +27,7 @@ The app will open in your browser at `http://localhost:8501`
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 LEO_Link_Simulator/
@@ -52,7 +52,7 @@ LEO_Link_Simulator/
 
 ---
 
-## 🔧 Features
+## Features
 
 ### Link Budget Analysis
 - **Friis Transmission Equation**: Calculate received power with path loss, atmospheric loss, and system losses
@@ -122,7 +122,7 @@ LEO_Link_Simulator/
 
 ---
 
-## 📊 Technical Models
+## Technical Models
 
 ### Friis Equation
 ```
@@ -145,13 +145,13 @@ Threshold: SNR > 10 dB = feasible link
 - **Crosslink**: t = d_sat-sat / c + t_processing (~30-50 ms)
 
 ### Coverage Metrics
-- **Availability**: Link available if LOS exists AND SNR > threshold
+- **Availability**: Link available if line of sight exists AND SNR > threshold
 - **Coverage %**: (time_link_available / total_orbit_time) * 100%
 - **Downtime**: total_orbit_time - link_available_time
 
 ---
 
-## 🎮 Usage
+## Usage
 
 ### Sidebar Controls
 
@@ -172,14 +172,14 @@ Threshold: SNR > 10 dB = feasible link
 
 ### Output Tabs
 
-1. **📊 Simulation Results**: SNR, latency, coverage plots and metrics
-2. **💰 Cost Analysis**: CapEx comparison and breakdown
-3. **📈 Value Dashboard**: KPIs, ROI, and business impact summary
-4. **📋 Data Tables**: Raw data export and detailed metrics
+1. **Simulation Results**: SNR, latency, coverage plots and metrics
+2. **Cost Analysis**: CapEx comparison and breakdown
+3. **Value Dashboard**: KPIs, ROI, and business impact summary
+4. **Data Tables**: Raw data export and detailed metrics
 
 ---
 
-## 🌍 Default Configuration
+## Default Configuration
 
 ### Satellites
 - **Count**: 6 satellites
@@ -196,7 +196,7 @@ Threshold: SNR > 10 dB = feasible link
 
 ---
 
-## 📈 Example Results
+## Example Results
 
 ### Typical Performance Comparison
 
@@ -210,7 +210,7 @@ Threshold: SNR > 10 dB = feasible link
 
 ---
 
-## 🔬 Technical Details
+## Technical Details
 
 ### Physical Constants
 - **Boltzmann Constant**: 1.380649×10⁻²³ J/K
@@ -227,7 +227,7 @@ Threshold: SNR > 10 dB = feasible link
 
 ---
 
-## 🛠️ Dependencies
+## Dependencies
 
 ```txt
 streamlit>=1.28.0
@@ -243,7 +243,7 @@ Python 3.10+ recommended
 
 ---
 
-## 🎯 Use Cases
+## Use Cases
 
 1. **Feasibility Studies**: Evaluate constellation architectures before deployment
 2. **Cost Optimization**: Compare infrastructure investment strategies
@@ -253,7 +253,7 @@ Python 3.10+ recommended
 
 ---
 
-## 🚧 Future Enhancements
+## Future Enhancements
 
 - [ ] Integration with real NASA TLE data
 - [ ] Non-circular orbit support (elliptical, polar)
@@ -266,7 +266,7 @@ Python 3.10+ recommended
 
 ---
 
-## 📝 Notes
+## Notes
 
 - **Simulation Speed**: Runs in seconds for 100 time steps
 - **Data Export**: Download CSV files of simulation results
@@ -275,9 +275,10 @@ Python 3.10+ recommended
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-This is a prototype designed for rapid demonstration. Feel free to extend with:
+This is a prototype designed for rapid demonstration. Future models could be extended with:
+- Meteorological conditions affecting ground-station communication
 - More sophisticated orbital mechanics
 - Additional ground station networks
 - Advanced link budget models
@@ -285,13 +286,13 @@ This is a prototype designed for rapid demonstration. Feel free to extend with:
 
 ---
 
-## 📄 License
+## License
 
 Open source - built for educational and demonstration purposes.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Orbital Mechanics**: Simplified circular orbit propagation
 - **Ground Station Locations**: Based on major global cities
@@ -300,13 +301,14 @@ Open source - built for educational and demonstration purposes.
 
 ---
 
-## 📧 Contact
+## Contact
 
 Built as a hackathon prototype for LEO satellite constellation analysis.
 
-**Ready to simulate!** 🛰️✨
+**Ready to simulate!** 
 
 ---
 
 *Last Updated: October 2025*
+
 
