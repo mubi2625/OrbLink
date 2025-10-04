@@ -1,10 +1,17 @@
 # 🛰️ LEO Link Simulator
 
-A Python-based **LEO satellite constellation link feasibility simulator** that compares two architecture strategies:
+A Python based **LEO satellite constellation link feasibility simulator** that compares two architecture strategies:
 1. **Ground-Station-Only** (satellites communicate only via ground stations)
 2. **Crosslinked** (satellites communicate with each other + minimal ground stations)
 
 Built for hackathon demonstrations and feasibility studies.
+
+## Team Members
+- Mubasshirah Khan
+- Gaurav Mishra
+- Syun M. Dixit
+- Surith Thogulava
+- Sofia Adelentado Lopez
 
 ---
 
@@ -267,4 +274,5 @@ Built as a hackathon prototype for LEO satellite constellation analysis.
 ---
 
 *Last Updated: October 2025*
+
 
