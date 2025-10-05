@@ -23,7 +23,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 import tempfile
 
-# Initialize the Dash app with Bootstrap theme
+# Initialise the Dash app with Bootstrap theme
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.title = "Satellite Communication Link Simulator"
 
@@ -585,7 +585,7 @@ def run_simulation(n_clicks, freq_band, tx_power, tx_gain, rx_gain, altitude,
     # Create radar chart for comprehensive comparison
     categories = ['Max SNR', 'Link Margin', 'Reliability', 'Coverage Time', 'Cost Efficiency']
     
-    # Normalize values for radar chart (0-100 scale)
+    # Normalise values for radar chart (0-100 scale)
     scenario_a_values = [
         min(100, max(0, (max(snrs) + 50) * 2)),  # Max SNR
         min(100, max(0, (min(link_margins) + 20) * 2.5)),  # Link Margin
@@ -909,3 +909,4 @@ def clear_results(n_clicks):
 
 if __name__ == "__main__":
     app.run_server(debug=True, host='127.0.0.1', port=8050)
+
