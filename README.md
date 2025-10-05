@@ -7,28 +7,28 @@ A comprehensive Python-based interactive web application for evaluating satellit
 ![NASA Data](https://img.shields.io/badge/data-NASA%20Powered-red.svg)
 ![License](https://img.shields.io/badge/license-NASA%20Open%20Source%20Agreement-orange.svg)
 
-## 🌟 Features
+## Features
 
-### 🔗 **Multi-Ground Station Analysis**
+### **Multi-Ground Station Analysis**
 - **12 NASA-recommended ground station locations** worldwide
 - **Real-time weather data integration** from NASA POWER API
 - **Individual station performance analysis** with weather-specific calculations
 - **Global coverage optimization** for satellite communication links
 
-### 📊 **Comprehensive Cost Analysis**
+### **Comprehensive Cost Analysis**
 - **NASA-based cost models** using Small Satellite Technology Program data
 - **Multiple satellite types**: CubeSat ($50K) to Large Sat ($10M)
 - **Ground station tiers**: Basic ($200K) to Military Grade ($5M)
 - **10-year cost projections** including operations, insurance, and maintenance
 - **Launch cost calculations** using NASA Commercial Crew Program data
 
-### 🎯 **Advanced Scenario Comparison**
+### **Advanced Scenario Comparison**
 - **Side-by-side analysis** of two different mission scenarios
 - **Interactive visualizations**: line plots, bar charts, radar charts
 - **Automated recommendation system** based on user priorities
 - **Detailed reasoning** for scenario selection
 
-### 📈 **Technical Performance Metrics**
+### **Technical Performance Metrics**
 - **Friis transmission equation** calculations
 - **Free-space path loss** analysis
 - **Signal-to-noise ratio (SNR)** computation
@@ -36,13 +36,13 @@ A comprehensive Python-based interactive web application for evaluating satellit
 - **Orbital debris risk assessment** using NASA ODPO data
 - **Coverage time estimation** for satellite passes
 
-### 📋 **Professional Reporting**
+### **Professional Reporting**
 - **Interactive PDF reports** with comprehensive analysis
 - **Technical explanations** for power values and calculations
 - **NASA data source attribution** and methodology documentation
 - **Export capabilities** for further analysis
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.7 or higher
@@ -69,7 +69,7 @@ A comprehensive Python-based interactive web application for evaluating satellit
 4. **Access the web interface**
    Open your browser and navigate to: `http://127.0.0.1:8050`
 
-## 📖 Usage Guide
+## Usage Guide
 
 ### 1. **Configure Mission Parameters**
 - Select frequency band (L, S, X, Ku, Ka, or optical)
@@ -98,7 +98,7 @@ A comprehensive Python-based interactive web application for evaluating satellit
 - Save analysis data for further processing
 - Share results with stakeholders
 
-## 🛠️ Technical Architecture
+## Technical Architecture
 
 ### **Frontend**
 - **Dash/Plotly**: Interactive web interface and visualizations
@@ -116,7 +116,7 @@ A comprehensive Python-based interactive web application for evaluating satellit
 - **NASA Small Satellite Technology Program**: Cost models
 - **ITU-R Recommendations**: Atmospheric attenuation models
 
-## 📊 Sample Analysis
+## Sample Analysis
 
 ### **Link Performance Metrics**
 - **Maximum SNR**: Signal-to-noise ratio at optimal range
@@ -134,7 +134,7 @@ A comprehensive Python-based interactive web application for evaluating satellit
 - **Reliability Assessment**: Weather and operational factors
 - **Coverage Analysis**: Global communication capabilities
 
-## 🔬 Scientific Methodology
+## Scientific Methodology
 
 ### **Link Budget Calculations**
 The platform implements the Friis transmission equation:
@@ -152,7 +152,7 @@ Received Power (dBW) = Transmit Power + Gain_tx + Gain_rx - Path Loss - Atmosphe
 - **Range calculations** for different elevation angles
 - **Debris risk assessment** using NASA ODPO data
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 satellite-communication-simulator/
@@ -164,7 +164,7 @@ satellite-communication-simulator/
 └── LICENSE              # NASA Open Source Agreement
 ```
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions to improve the satellite communication simulation platform! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
@@ -182,32 +182,29 @@ We welcome contributions to improve the satellite communication simulation platf
 - Performance optimizations
 - Documentation improvements
 
-## 📄 License
+## License
 
 This project is licensed under the **NASA Open Source Agreement** - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **NASA** for providing comprehensive satellite and atmospheric data
 - **ITU-R** for international telecommunications standards
 - **Plotly/Dash** community for excellent visualization tools
 - **Open source contributors** who make projects like this possible
 
-## 📞 Support
+## Support
 
 For questions, issues, or feature requests:
-- 📧 **Email**: [your-email@domain.com]
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/satellite-communication-simulator/issues)
-- 📖 **Documentation**: [Project Wiki](https://github.com/yourusername/satellite-communication-simulator/wiki)
+- **Email**: [your-email@domain.com]
+- **Issues**: [GitHub Issues](https://github.com/yourusername/satellite-communication-simulator/issues)
+- **Documentation**: [Project Wiki](https://github.com/yourusername/satellite-communication-simulator/wiki)
 
-## 🔗 Related Projects
+## Related Projects
 
 - [NASA POWER API](https://power.larc.nasa.gov/)
 - [NASA Orbital Debris Program Office](https://orbitaldebris.jsc.nasa.gov/)
 - [ITU-R Recommendations](https://www.itu.int/rec/R-REC/en)
 
----
-
-**Made with ❤️ for the satellite communication community**
-
 *This project uses NASA data and follows NASA open source guidelines for scientific and educational purposes.*
+
