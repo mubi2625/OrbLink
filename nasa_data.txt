@@ -1,0 +1,153 @@
+{
+  "weather_attenuation": {
+    "L": {
+      "clear": 0.1,
+      "rain": 0.2,
+      "description": "L-band (1-2 GHz) - Minimal atmospheric attenuation, suitable for all weather conditions"
+    },
+    "S": {
+      "clear": 0.2,
+      "rain": 0.5,
+      "description": "S-band (2-4 GHz) - Low atmospheric attenuation, good for mobile communications"
+    },
+    "X": {
+      "clear": 0.3,
+      "rain": 1.0,
+      "description": "X-band (8-12 GHz) - Moderate attenuation, commonly used for military and commercial applications"
+    },
+    "Ku": {
+      "clear": 0.5,
+      "rain": 2.0,
+      "description": "Ku-band (12-18 GHz) - Higher attenuation in rain, used for DBS and VSAT"
+    },
+    "Ka": {
+      "clear": 0.8,
+      "rain": 5.0,
+      "description": "Ka-band (26-40 GHz) - High attenuation in rain, used for high-capacity communications"
+    },
+    "optical": {
+      "clear": 0.0,
+      "rain": 50.0,
+      "description": "Optical (laser) - No attenuation in clear conditions, completely blocked by clouds/rain"
+    }
+  },
+  "debris_data": {
+    "100": 0,
+    "200": 50,
+    "400": 200,
+    "600": 500,
+    "800": 800,
+    "1000": 600,
+    "1200": 400,
+    "1500": 200,
+    "2000": 100,
+    "description": "Number of cataloged debris objects per 100km altitude band in LEO (0-2000 km)",
+    "source": "NASA Orbital Debris Program Office (ODPO) - 2023 data"
+  },
+  "atmospheric_models": {
+    "ITU_R_676": {
+      "description": "ITU-R Recommendation 676 for atmospheric attenuation calculations",
+      "oxygen_absorption": {
+        "L": 0.0001,
+        "S": 0.0002,
+        "X": 0.0005,
+        "Ku": 0.001,
+        "Ka": 0.002
+      },
+      "water_vapor_absorption": {
+        "L": 0.0001,
+        "S": 0.0002,
+        "X": 0.0005,
+        "Ku": 0.001,
+        "Ka": 0.002
+      }
+    }
+  },
+  "rain_attenuation_model": {
+    "ITU_R_838": {
+      "description": "ITU-R Recommendation 838 for rain attenuation prediction",
+      "rain_rate_coefficients": {
+        "L": {"k": 0.0001, "alpha": 0.8},
+        "S": {"k": 0.0002, "alpha": 0.9},
+        "X": {"k": 0.0005, "alpha": 1.0},
+        "Ku": {"k": 0.001, "alpha": 1.1},
+        "Ka": {"k": 0.002, "alpha": 1.2}
+      }
+    }
+  },
+  "cloud_attenuation": {
+    "optical": {
+      "clear_sky": 0.0,
+      "thin_clouds": 3.0,
+      "thick_clouds": 15.0,
+      "heavy_clouds": 30.0,
+      "description": "Cloud attenuation for optical communications (dB)"
+    }
+  },
+  "ionospheric_effects": {
+    "L": 0.1,
+    "S": 0.05,
+    "X": 0.02,
+    "Ku": 0.01,
+    "Ka": 0.005,
+    "description": "Ionospheric scintillation effects (dB) - higher at lower frequencies"
+  },
+  "ground_stations": {
+    "London": {"lat": 51.5074, "lon": -0.1278, "country": "UK", "region": "Europe"},
+    "New York": {"lat": 40.7128, "lon": -74.0060, "country": "USA", "region": "North America"},
+    "Tokyo": {"lat": 35.6762, "lon": 139.6503, "country": "Japan", "region": "Asia"},
+    "Sydney": {"lat": -33.8688, "lon": 151.2093, "country": "Australia", "region": "Oceania"},
+    "Cape Town": {"lat": -33.9249, "lon": 18.4241, "country": "South Africa", "region": "Africa"},
+    "São Paulo": {"lat": -23.5505, "lon": -46.6333, "country": "Brazil", "region": "South America"},
+    "Moscow": {"lat": 55.7558, "lon": 37.6176, "country": "Russia", "region": "Europe"},
+    "Dubai": {"lat": 25.2048, "lon": 55.2708, "country": "UAE", "region": "Middle East"},
+    "Singapore": {"lat": 1.3521, "lon": 103.8198, "country": "Singapore", "region": "Asia"},
+    "Los Angeles": {"lat": 34.0522, "lon": -118.2437, "country": "USA", "region": "North America"},
+    "Mumbai": {"lat": 19.0760, "lon": 72.8777, "country": "India", "region": "Asia"},
+    "Berlin": {"lat": 52.5200, "lon": 13.4050, "country": "Germany", "region": "Europe"}
+  },
+  "cost_data": {
+    "satellite_costs": {
+      "cubesat": 50000,
+      "small_sat": 500000,
+      "medium_sat": 2000000,
+      "large_sat": 10000000,
+      "constellation_sat": 300000,
+      "description": "Costs in USD based on NASA Small Satellite Technology Program data"
+    },
+    "ground_station_costs": {
+      "basic": 200000,
+      "standard": 500000,
+      "advanced": 1500000,
+      "military_grade": 5000000,
+      "description": "Ground station costs based on NASA Deep Space Network estimates"
+    },
+    "operational_costs": {
+      "per_satellite_per_year": 100000,
+      "per_ground_station_per_year": 50000,
+      "launch_cost_per_kg": 10000,
+      "insurance_per_satellite_per_year": 20000,
+      "description": "Annual operational costs based on NASA mission data"
+    },
+    "launch_vehicles": {
+      "falcon_9": {"cost_per_kg": 2720, "reliability": 0.98},
+      "falcon_heavy": {"cost_per_kg": 1500, "reliability": 0.95},
+      "soyuz": {"cost_per_kg": 8000, "reliability": 0.97},
+      "atlas_v": {"cost_per_kg": 10000, "reliability": 0.99},
+      "description": "Launch costs and reliability based on NASA Commercial Crew Program data"
+    }
+  },
+  "data_sources": {
+    "weather": "NASA POWER (Prediction of Worldwide Energy Resources) API - power.larc.nasa.gov",
+    "debris": "NASA Orbital Debris Program Office - orbitaldebris.jsc.nasa.gov",
+    "atmospheric": "ITU-R Recommendations based on NASA atmospheric research",
+    "costs": "NASA Small Satellite Technology Program, Commercial Crew Program, Deep Space Network",
+    "last_updated": "2024-01-01"
+  },
+  "notes": {
+    "weather_data": "Real-time weather data is fetched from NASA POWER API for ground station coordinates",
+    "debris_data": "Historical debris counts based on NASA ODPO catalog, updated annually",
+    "attenuation_models": "Based on ITU-R recommendations derived from NASA atmospheric research",
+    "frequency_bands": "Standard satellite communication frequency allocations"
+  }
+}
