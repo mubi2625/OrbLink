@@ -127,9 +127,6 @@ Received Power (dBW) = Transmit Power + Gain_tx + Gain_rx - Path Loss - Atmosphe
 - Performance optimizations
 - Documentation improvements
 
-## License
-
-This project is licensed under the **NASA Open Source Agreement** - see the [LICENSE](LICENSE) file for details.
 
 
 
